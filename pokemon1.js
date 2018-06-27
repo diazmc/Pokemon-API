@@ -5,29 +5,35 @@ $(document).ready(function(){
             $("#pokemons").append('<img id="' + i + '" src="https://pokeapi.co/media/img/' + i + '.png">')
         }
 
+        $("#pokemons img").click(function(){
+            var img = $(this).attr("src")
+            
+            $.get("https://pokeapi.co/api/v2/pokemon/" + $(this).attr("id") + "/", function(res){
 
-        $(document).on('click', '#pokemons img', function (){
+                var pokedexinfo = "";
 
-            var img = $(this).attr('src')
-       
-            $.get("https://pokeapi.co/api/v2/pokemon/" + $(this).attr('id') + "/",function(res){
+                pokedexinfo += "<h1>" + res.name + "</h1>"
+                pokedexinfo += "<img src='" + img + "'>"
+                pokedexinfo += "<h2>" + 'Types' + "</h2>"
                 
-            var pokedexinfo = "";
-            pokedexinfo += "<h1>" + res.name + "</h1>"
-            pokedexinfo += "<img src='" + img + "'>"
-            pokedexinfo += "<h2>" + 'Types' + "</h2>"
+                for (var i = 0; i < res.types.length; i++) {
+                    pokedexinfo += "<li>" + res.types[i].type.name + "</li>"
+                }
+    
+                pokedexinfo += "<h2>" + 'Height' + "</h2>" + "<p>" + res.height + "</p>"
+                pokedexinfo += "<h2>" + 'Weight' + "</h2>" + "<p>" + res.weight + "</p>"
+                
+                console.log(res)
+                
+                
+                $('#pokedex').empty().append(pokedexinfo) 
+
+            }, "json")
             
-            for (var i = 0; i < res.types.length; i++) {
-                pokedexinfo += "<ul><li>" + res.types[i].type.name + "</li></ul>"
-            }
-            pokedexinfo += "<h2>" + 'Height' + "</h2>" + "<p>" + res.height + "</p>"
-            pokedexinfo += "<h2>" + 'Weight' + "</h2>" + "<p>" + res.weight + "</p>"
-            
-            console.log(res)
-            
-            $('#pokedex').empty().append(pokedexinfo)
-            
-            }, "json");
-        })       
+        })
+        
+        
+        
+
     
 });
