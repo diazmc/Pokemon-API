@@ -11,10 +11,9 @@ body {
 }
 
 #pokemons {
-    width: 950px;
-    position: absolute;
     right: 0;
     margin-right: 30px;
+    margin-left: 400px;
 }
 #pokedex {
     position: fixed;
