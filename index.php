@@ -1,3 +1,3 @@
-<?php echo( 'Location: /index.html' ) ;  ?>
+<?php echo( 'Location: /pokemon1.html' ) ;  ?>
 
 
