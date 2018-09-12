@@ -1,2 +1,2 @@
-<?php header( 'Location: /pokemon1.html' ) ;  ?>
+<?php echo $pokemon1.hmtl;  ?>
 
