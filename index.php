@@ -1,2 +1,2 @@
-<?php echo $pokemon1.hmtl;  ?>
+<?php echo $pokemon1.html;  ?>
 
