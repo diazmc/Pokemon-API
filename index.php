@@ -1,2 +1,3 @@
-<?php echo pokemon1.html;  ?>
+<?php echo( 'Location: /index.html' ) ;  ?>
+
 
