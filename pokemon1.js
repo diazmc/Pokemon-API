@@ -1,7 +1,7 @@
 $(document).ready(function(){
         var pokemonpics = "";
 
-        for (var i = 1; i < 300; i++) {
+        for (var i = 1; i < 100; i++) {
             $("#pokemons").append('<img id="' + i + '" src="https://pokeapi.co/media/img/' + i + '.png">')
         }
 
