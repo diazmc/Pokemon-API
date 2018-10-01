@@ -2,7 +2,7 @@ $(document).ready(function(){
         var pokemonpics = "";
 
         for (var i = 1; i < 100; i++) {
-            $("#pokemons").append('<img id="' + i + '" src="https://pokeapi.co/media/img/' + i + '.png">')
+            $("#pokemons").append('<img id="' + i + '" src="https://pokeapi.co/media/sprites/pokemon/' + i + '.png">')
         }
 
         $("#pokemons img").click(function(){
